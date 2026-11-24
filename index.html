@@ -1,26 +1,462 @@
+
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>
-      my shop
-    </title>
-  </head>
-  <h1>
-    JOHN KINGSLEY PORTFOLIO
-  </h1>
-  <p>
-    welcome to my personal portfplio
-  </p>
-  <footer>
-    <h2>
-      Contact me
-    </h2>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>John Kingsley | Creative Art Studio</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #111111;
+  color: #f5f0e6;
+  line-height: 1.7;
+}
+
+header {
+  background: #171717;
+  padding: 20px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #39332a;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  color: #d8b46a;
+  font-size: 19px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 18px;
+  font-size: 13px;
+}
+
+nav a:hover {
+  color: #d8b46a;
+}
+
+.hero {
+  min-height: 570px;
+  padding: 100px 8%;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(110deg, #111 55%, #292319);
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+.small-title {
+  color: #d8b46a;
+  letter-spacing: 4px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(42px, 8vw, 76px);
+  line-height: 1.12;
+  margin: 22px 0;
+}
+
+.hero h1 span {
+  color: #d8b46a;
+}
+
+.hero p {
+  color: #c7c2b8;
+  max-width: 520px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  background: #d8b46a;
+  color: #17130c;
+  padding: 13px 24px;
+  text-decoration: none;
+  border-radius: 3px;
+  font-weight: bold;
+  margin: 5px 8px 5px 0;
+}
+
+.btn:hover {
+  background: #f0d49a;
+}
+
+.btn-outline {
+  border: 1px solid #d8b46a;
+  color: #d8b46a;
+  background: transparent;
+}
+
+section {
+  padding: 85px 8%;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-heading span {
+  color: #d8b46a;
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+.section-heading h2 {
+  font-family: Georgia, serif;
+  font-size: 37px;
+  margin-top: 10px;
+}
+
+.section-heading p {
+  color: #aaa;
+  margin-top: 10px;
+}
+
+.gallery {
+  background: #191919;
+}
+
+.art-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+}
+
+.art-card {
+  background: #242424;
+  border: 1px solid #39332a;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.art-placeholder {
+  height: 260px;
+  background: linear-gradient(145deg, #34302a, #171717);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #d8b46a;
+  text-align: center;
+  padding: 15px;
+}
+
+.art-placeholder strong {
+  font-size: 35px;
+  font-family: Georgia, serif;
+}
+
+.art-placeholder p {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.art-info {
+  padding: 18px;
+}
+
+.art-info h3 {
+  color: #d8b46a;
+  font-family: Georgia, serif;
+}
+
+.art-info p {
+  font-size: 13px;
+  color: #aaa;
+}
+
+.about-content {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+.about-content p {
+  color: #c3beb4;
+  margin: 18px 0;
+}
+
+.services {
+  background: #191919;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 20px;
+}
+
+.service {
+  padding: 30px 22px;
+  border: 1px solid #49402f;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.service .symbol {
+  color: #d8b46a;
+  font-size: 36px;
+}
+
+.service h3 {
+  color: #e6c784;
+  margin: 12px 0;
+}
+
+.service p {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.contact {
+  text-align: center;
+}
+
+.contact p {
+  color: #bbb;
+  margin: 15px auto 25px;
+  max-width: 550px;
+}
+
+footer {
+  background: #080808;
+  padding: 30px 8%;
+  text-align: center;
+  color: #999;
+  font-size: 13px;
+  border-top: 1px solid #39332a;
+}
+
+footer strong {
+  color: #d8b46a;
+}
+
+@media(max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  nav a {
+    margin: 0 7px;
+    font-size: 12px;
+  }
+
+  .hero {
+    min-height: 480px;
+    padding: 75px 7%;
+  }
+
+  section {
+    padding: 65px 7%;
+  }
+
+  .section-heading h2 {
+    font-size: 30px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">JK. CREATIVE STUDIO</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HOME -->
+<div class="hero" id="home">
+  <div class="hero-content">
+    <div class="small-title">WELCOME TO MY CREATIVE WORLD</div>
+
+    <h1>JOHN<br><span>KINGSLEY</span></h1>
+
     <p>
-      Thank you for visiting my portfplio
+      Every portrait tells a story.
+      Every pencil stroke creates emotion.
+      Welcome to my world of creativity,
+      imagination and realistic pencil art.
     </p>
-    <a href="tel:+233509265630" class="call-button">Call me: +233509265630</a>
-    <plass class="copyright">
-      @ 2026 my portfplio. All right reserve.
+
+    <a href="#gallery" class="btn">Explore My Artwork</a>
+    <a href="#contact" class="btn btn-outline">Contact Me</a>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="section-heading">
+    <span>MY CREATIVE COLLECTION</span>
+    <h2>My Artwork Gallery</h2>
+    <p>A collection of my artistic journey and creative expressions.</p>
+  </div>
+
+  <div class="art-grid">
+
+    <div class="art-card">
+      <div class="art-placeholder">
+        <strong>01</strong>
+        <p>Your portrait drawing will appear here</p>
+      </div>
+      <div class="art-info">
+        <h3>Portrait Drawing</h3>
+        <p>Realistic pencil portrait artwork.</p>
+      </div>
+    </div>
+
+    <div class="art-card">
+      <div class="art-placeholder">
+        <strong>02</strong>
+        <p>Your pencil sketch will appear here</p>
+      </div>
+      <div class="art-info">
+        <h3>Pencil Sketch</h3>
+        <p>Creative pencil drawing and shading.</p>
+      </div>
+    </div>
+
+    <div class="art-card">
+      <div class="art-placeholder">
+        <strong>03</strong>
+        <p>Your artwork will appear here</p>
+      </div>
+      <div class="art-info">
+        <h3>Creative Art</h3>
+        <p>Expressions of imagination and creativity.</p>
+      </div>
+    </div>
+
+    <div class="art-card">
+      <div class="art-placeholder">
+        <strong>04</strong>
+        <p>Your next masterpiece will appear here</p>
+      </div>
+      <div class="art-info">
+        <h3>My Masterpiece</h3>
+        <p>More of my artistic creations.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-heading">
+    <span>GET TO KNOW ME</span>
+    <h2>About The Artist</h2>
+  </div>
+
+  <div class="about-content">
+    <p>
+      Hello! My name is <strong>John Kingsley</strong>.
+      I am a Form Three Visual Arts student with a passion
+      for pencil drawing, portraiture and creative expression.
     </p>
-  </footer>
+
+    <p>
+      Art is more than drawing to me. It is a way of expressing
+      ideas, capturing emotions and bringing imagination to life.
+      I am constantly learning, practising and developing
+      my artistic skills.
+    </p>
+
+    <p>
+      My dream is to grow as an artist, share my creativity
+      with the world and create beautiful artworks for people
+      who appreciate art.
+    </p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-heading">
+    <span>WHAT I CREATE</span>
+    <h2>My Art Services</h2>
+    <p>Creative artwork and portrait services.</p>
+  </div>
+
+  <div class="service-grid">
+
+    <div class="service">
+      <div class="symbol">✎</div>
+      <h3>Portrait Drawing</h3>
+      <p>Beautiful hand-drawn portraits with pencil.</p>
+    </div>
+
+    <div class="service">
+      <div class="symbol">✍</div>
+      <h3>Pencil Sketching</h3>
+      <p>Creative sketches with attention to detail.</p>
+    </div>
+
+    <div class="service">
+      <div class="symbol">◈</div>
+      <h3>Realistic Shading</h3>
+      <p>Detailed light, shadow and tonal effects.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-heading">
+    <span>LET'S CREATE SOMETHING BEAUTIFUL</span>
+    <h2>Work With Me</h2>
+  </div>
+
+  <p>
+    Do you love my artwork? Would you like a portrait
+    or a custom pencil drawing?
+    Contact me to discuss your ideas and enquiries.
+  </p>
+
+  <!-- Replace the number in these class with your own -->
+  <a href="https://wa.me/233509265630" class="btn">
+    Chat on WhatsApp
+  </a>
+
+  <a href="tel:+233509265630" class="btn btn-outline">
+    Call Me
+  </a>
+</section>
+
+<footer>
+  <strong>JOHN KINGSLEY CREATIVE ART STUDIO</strong>
+  <p>Creating beauty, one pencil stroke at a time.</p>
+  <p>© 2026 John Kingsley. All Rights Reserved.</p>
+</footer>
+
+</body>
 </html>
